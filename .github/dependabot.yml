@@ -1,0 +1,53 @@
+version: 2
+updates:
+  # .NET dependencies
+  - package-ecosystem: "nuget"
+    directory: "/" # Root directory where global.json is located
+    schedule:
+      interval: "monthly"
+    target-branch: "dependabotchanges"
+    open-pull-requests-limit: 16
+    labels:
+      - ".NET"
+      - "dependencies"
+    commit-message:
+      prefix: "build"
+
+  # Python dependencies (requirements.txt)
+  - package-ecosystem: "pip"
+    directory: "/Deployment/scripts/fabric_scripts" # Location of requirements.txt
+    schedule:
+      interval: "monthly"
+    target-branch: "dependabotchanges"
+    open-pull-requests-limit: 16
+    labels:
+      - "Python"
+      - "dependencies"
+    commit-message:
+      prefix: "build"
+
+  # Python dependencies (ckm_environment.yml) using "pip"
+  - package-ecosystem: "pip"
+    directory: "/Deployment/scripts/fabric_scripts" # Location of ckm_environment.yml
+    schedule:
+      interval: "monthly"
+    target-branch: "dependabotchanges"
+    open-pull-requests-limit: 16
+    labels:
+      - "Python"
+      - "dependencies"
+    commit-message:
+      prefix: "build"
+
+  # GitHub Actions dependencies
+  - package-ecosystem: "github-actions"
+    directory: "/.github/workflows"
+    schedule:
+      interval: "monthly"
+    target-branch: "dependabotchanges"
+    open-pull-requests-limit: 5
+    labels:
+      - "CI/CD"
+      - "dependencies"
+    commit-message:
+      prefix: "build"
