@@ -1,17 +1,5 @@
 version: 2
 updates:
-  # .NET dependencies
-  - package-ecosystem: "nuget"
-    directory: "/" # Root directory where global.json is located
-    schedule:
-      interval: "monthly"
-    target-branch: "dependabotchanges"
-    open-pull-requests-limit: 16
-    labels:
-      - ".NET"
-      - "dependencies"
-    commit-message:
-      prefix: "build"
 
   # Python dependencies (requirements.txt)
   - package-ecosystem: "pip"
