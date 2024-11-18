@@ -15,7 +15,7 @@ updates:
 
   # Python dependencies (requirements.txt)
   - package-ecosystem: "pip"
-    directory: "/Deployment/scripts/fabric_scripts" # Location of requirements.txt
+    directory: "/Deployment/scripts/fabric_scripts/requirements" # Updated directory
     schedule:
       interval: "monthly"
     target-branch: "dependabotchanges"
@@ -28,7 +28,7 @@ updates:
 
   # Python dependencies (ckm_environment.yml) using "pip"
   - package-ecosystem: "pip"
-    directory: "/Deployment/scripts/fabric_scripts" # Location of ckm_environment.yml
+    directory: "/Deployment/scripts/fabric_scripts/ckm" # Updated directory
     schedule:
       interval: "monthly"
     target-branch: "dependabotchanges"
