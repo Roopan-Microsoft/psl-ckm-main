@@ -1,9 +1,9 @@
 version: 2
 updates:
 
-  # Python dependencies (requirements.txt)
+ 
   - package-ecosystem: "pip"
-    directory: "/Deployment/scripts/fabric_scripts/requirements" # Updated directory
+    directory: "/Deployment/scripts/fabric_scripts" 
     schedule:
       interval: "monthly"
     target-branch: "dependabotchanges"
@@ -14,20 +14,8 @@ updates:
     commit-message:
       prefix: "build"
 
-  # Python dependencies (ckm_environment.yml) using "pip"
-  - package-ecosystem: "pip"
-    directory: "/Deployment/scripts/fabric_scripts/ckm" # Updated directory
-    schedule:
-      interval: "monthly"
-    target-branch: "dependabotchanges"
-    open-pull-requests-limit: 16
-    labels:
-      - "Python"
-      - "dependencies"
-    commit-message:
-      prefix: "build"
 
-  # GitHub Actions dependencies
+  
   - package-ecosystem: "github-actions"
     directory: "/.github/workflows"
     schedule:
